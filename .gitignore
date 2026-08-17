@@ -1,0 +1,26 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+
+#Environment files
+*.env
+.env.local
+
+#Large data files too large for GitHub
+*.parquet
+*.csv
+
+#Model files too large for GitHub
+*.pkl
+
+#VS Code Settings
+.vscode/
+
+#Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+#Windows OS files
+Thumbs.db
+.DS_Store
+

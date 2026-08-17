@@ -1,0 +1,13 @@
+#Libraries used in the project and needed to run the API
+#The following libraries are needed to run api/main.py
+# HOW TO INSTALL: pip install -r requirements.txt
+# HOW TO RUN API: uvicorn main:fare_app --reload
+
+
+fastapi==0.139.0
+joblib==1.5.3
+numpy==2.4.6
+pydantic==2.13.4
+scikit-learn==1.9.0
+uvicorn==0.51.0
+

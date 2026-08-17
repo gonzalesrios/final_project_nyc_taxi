@@ -1,0 +1,4 @@
+#What libraries are required for the monitoring module
+
+streamlit == 1.59.1
+requests == 2.33.1
