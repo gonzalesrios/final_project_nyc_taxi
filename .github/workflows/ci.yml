@@ -1,0 +1,71 @@
+#.github/workflows/ci.yml
+#Runs automatically when you push to GitHub or create a pull request. 
+#Checks code quality and runs tests.
+
+#https://docs.gitlab.com/ci/yaml/
+#https://spacelift.io/blog/gitlab-ci-yml
+#https://code.visualstudio.com/api/working-with-extensions/continuous-integration
+#https://flake8.pycqa.org/en/latest/
+#https://docs.pytest.org/en/stable/
+
+
+name: CI Pipeline - NYC Taxi Fare Predictor
+
+#When does this workflow run?
+on:
+  push:
+    branches: [ main ]
+    #Creates a pull request to the main branch
+  pull_request:
+    branches: [ main ]  #runs when a pull request is created to the main branch
+
+
+#What jobs does this workflow run?
+#Need to grab/collect my code, Set up Python, Install dependencies, Run code quality checks, Run tests
+#Makes sure my codes runs on ANY computer not just my Windows Computer
+jobs:
+  #Job 1: BUILD AND TEST
+  build-and-test:
+    runs-on: ubuntu-latest
+    #Docker uses Linux and Ubuntu is a type of Linux
+
+    steps:
+      #Step 1: Grab the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      #Step 2: Set up Python (INSTALL PYTHON)
+      #Need to tell it which version of Python to use.
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      #Step 3: Install Dependencies/Libraries
+      #Need all libraries used in the project, including FastAPI, Uvicorn, Joblib, Numpy, Scikit-learn, etc.
+      - name: Install required libraries
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi
+          pip install uvicorn
+          pip install joblib
+          pip install numpy
+          pip install scikit-learn
+          pip install pydantic
+          pip install httpx
+          pip install pytest
+          pip install flake8
+
+      #Step 4: Run Code Quality Checks
+      #flake8 is like a 'spell checker' for Python  or code and allows 120 characters per line.  
+      #It checks for errors in the code, enforces a coding standard
+      - name: Run code quality checks with flake8
+        run: |
+          flake8 api/main.py --max-line-length=120
+
+      #Step 5: Run Automated Tests
+      #It will go find all files that start with test_ and run them.  
+      #It will also find all functions that start with test_ and run them.
+      - name: Run automated tests
+        run: |
+          pytest tests/test_api.py -v 
