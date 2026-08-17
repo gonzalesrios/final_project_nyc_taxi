@@ -48,14 +48,14 @@ This project has multi-container application with two services working together 
 
 ### Project Structure
 final_project/
-├── api/ - FastAPI backend service
-│ ├── main.py - API endpoints
-│ ├── Dockerfile -  Container for API
-│ ├── requirements.txt -  Libraries for API
-│ └── taxi_fare_model.pkl -  Trained model 
+|-- api/ - FastAPI backend service
+│ |-- main.py - API endpoints
+│ |-- Dockerfile -  Container for API
+│ |-- requirements.txt -  Libraries for API
+│ |-- taxi_fare_model.pkl -  Trained model 
 ├── monitoring/ - Streamlit frontend
-│ ├── app.py -  User interface
-│ ├── Dockerfile - Container for frontend
+│ |-- app.py -  User interface
+│ |-- Dockerfile - Container for frontend
 │ └── requirements.txt - Libraries for frontend
 ├── tests/
 │ └── test_api.py - Automated API tests
