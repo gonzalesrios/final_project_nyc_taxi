@@ -216,3 +216,5 @@ Our model has an R2 of 0.8098 which is 81/100 times the model knows why 1 fare c
 - Algorithm changed from RandomForestRegressor to 
   HistGradientBoostingRegressor to reduce model file size
   from 21GB to 0.35MB so it may be uploaded to GitHub.
+
+-- Dev Branch --
