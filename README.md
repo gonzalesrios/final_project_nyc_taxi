@@ -49,19 +49,19 @@ This project has multi-container application with two services working together 
 ### Project Structure
 final_project/
 |-- api/ - FastAPI backend service
-│ |-- main.py - API endpoints
-│ |-- Dockerfile -  Container for API
-│ |-- requirements.txt -  Libraries for API
-│ |-- taxi_fare_model.pkl -  Trained model 
+│ |__ main.py - API endpoints
+│ |__ Dockerfile -  Container for API
+│ |__ requirements.txt -  Libraries for API
+│ |__ taxi_fare_model.pkl -  Trained model 
 |-- monitoring/ - Streamlit frontend
 │ |-- app.py -  User interface
 │ |-- Dockerfile - Container for frontend
-│ └── requirements.txt - Libraries for frontend
+│ |-- requirements.txt - Libraries for frontend
 |-- tests/
-│ └── test_api.py - Automated API tests
+│ |__ test_api.py - Automated API tests
 |-- .github/
-│ └── workflows/
-│ └── ci.yml - CI/CD pipeline
+│ |__ workflows/
+│ |__ ci.yml - CI/CD pipeline
 |-- train_model.py - Train and save the ML model
 |-- explore_data.py - Data exploration script
 |-- Makefile - Shortcuts for Docker commands
@@ -185,6 +185,7 @@ The project uses Github Actions for CI/CD. Every time the code is pushed to the 
 ### Model Performance
 Take a look at how the model performed:
 | Metric  | Training  | Test  | Difference  |
+
 |---------|-----------|-------|-------------|
 | MAE($)  | $1.60     | $4.06 | $2.46       |
 | RMSE($) | $2.88     | $7.25 | $4.35       |
@@ -255,6 +256,7 @@ STEP 2: Security Settings (Correct Ports)
 6. Add these three rules:
 
 | Port  | Protocol  | Source  | Purpose  |
+
 |-------|-----------|---------|----------|
 | 22    | SSH       | My IP   | Connect to server |
 | 8000  | TCP       | Anywhere| FastAPI backend access|
