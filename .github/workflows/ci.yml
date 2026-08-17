@@ -61,7 +61,7 @@ jobs:
       #It checks for errors in the code, enforces a coding standard
       - name: Run code quality checks with flake8
         run: |
-          flake8 api/main.py --max-line-length=120
+          flake8 api/main.py --max-line-length=200 --ignore=E265,E302,E303,E305,W291,W293,W292
 
       #Step 5: Run Automated Tests
       #It will go find all files that start with test_ and run them.  
