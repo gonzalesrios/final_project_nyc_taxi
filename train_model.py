@@ -4,6 +4,7 @@ import pandas as pd
 import joblib
 import os 
 import numpy as np
+import wandb
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor, HistGradientBoostingRegressor 
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error 
@@ -121,6 +122,22 @@ print(f"\nTesting set: {X_test.shape[0]} rows, percentage: {X_test.shape[0]/X.sh
 
 
 #-------------------------
+#NEED TO INITIALIZE WANDB BEFORE TRAINING THE MODEL
+#W&B EXPERIMENT TRACKING
+wandb.init(
+    project="nyc-taxi-fare-predictor",
+    config={
+        "algorithm": "HistGradientBoostingRegressor",
+        "max_iter": 100,
+        "max_depth": 10,
+        "learning_rate": 0.1,
+        "early_stopping": True,
+        "training_rows": X_train.shape[0],
+        "test_rows": X_test.shape[0],
+        "features": features
+    }
+)
+
 #TRAIN THE MODEL - STEP 6
 #RandomForestRegressor is good to help make many decisions and average them out to make a final decision
 #We will switch to HistGradientBoostingRegressor for smaller model size and similar accuracy
@@ -179,6 +196,8 @@ train_predictions = model.predict(X_train)
 mae_train = mean_absolute_error(y_train, train_predictions)
 mse_train = mean_squared_error(y_train, train_predictions)
 rmse_train = np.sqrt(mse_train)
+train_mae = mae_train
+train_rmse = rmse_train
 
 print(f"Training Mean Absolute Error (MAE): {mae_train}")
 print(f"Training Mean Squared Error (MSE): {mse_train}")
@@ -275,6 +294,18 @@ RMSE = Root Mean Square Error = square root of MSE, back into original units (do
 
 
 """
+
+#-------------------------
+#LOGGING METRICS TO W&B DASHBOARD
+wandb.log({
+    "MAE_train": train_mae,
+    "MAE_test": mae_test,
+    "RMSE_train": train_rmse,
+    "RMSE_test": rmse_test,
+    "R2_train": r2_train,
+    "R2_test": r2_test
+})
+wandb.finish()
 
 
 #-----------------------
