@@ -375,6 +375,15 @@ docker network rm my_network
 
 docker volume rm my_volume
 
+### EXPERIMENT TRACKING - WEIGHTS AND BIASES
+This project uses Weights & Biases (W&B) to track all training experiments.
+Every time the model is trained, W&B automatically records:
+- All hyperparameters used (max_depth, learning_rate etc)
+- All performance metrics (MAE, RMSE, R2)
+- Training vs test comparison
+-  W&B Experiment Tracking Dashboard:
+  https://wandb.ai/gonzalesrios-university-of-denver/nyc-taxi-fare-predictor
+
 
 ### Notes
 -This project was built using AWS Academy Learner Lab through school.

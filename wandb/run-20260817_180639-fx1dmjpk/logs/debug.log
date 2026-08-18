@@ -1,0 +1,24 @@
+2026-08-17 18:06:39,966 INFO    MainThread:25180 [wandb_setup.py:_flush():81] Current SDK version is 0.28.2
+2026-08-17 18:06:39,966 INFO    MainThread:25180 [wandb_setup.py:_flush():81] Configure stats pid to 25180
+2026-08-17 18:06:39,966 INFO    MainThread:25180 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-08-17 18:06:39,966 INFO    MainThread:25180 [wandb_init.py:setup_run_log_directory():739] Logging user logs to C:\Users\Matt Tower\OneDrive\Documents\Classes\Summer2026\comp4450\final_project\wandb\run-20260817_180639-fx1dmjpk\logs\debug.log
+2026-08-17 18:06:39,967 INFO    MainThread:25180 [wandb_init.py:setup_run_log_directory():740] Logging internal logs to C:\Users\Matt Tower\OneDrive\Documents\Classes\Summer2026\comp4450\final_project\wandb\run-20260817_180639-fx1dmjpk\logs\debug-internal.log
+2026-08-17 18:06:39,967 INFO    MainThread:25180 [wandb_init.py:init():783] calling init triggers
+2026-08-17 18:06:39,967 INFO    MainThread:25180 [wandb_init.py:init():788] wandb.init called with sweep_config: {}
+config: {'algorithm': 'HistGradientBoostingRegressor', 'max_iter': 100, 'max_depth': 10, 'learning_rate': 0.1, 'early_stopping': True, 'training_rows': 2836264, 'test_rows': 709067, 'features': ['trip_distance', 'passenger_count', 'PULocationID', 'DOLocationID', 'pickup_hour', 'pickup_dayofweek', 'pickup_weekend', 'pickup_month'], '_wandb': {}}
+2026-08-17 18:06:39,967 INFO    MainThread:25180 [wandb_init.py:init():831] starting backend
+2026-08-17 18:06:39,967 INFO    MainThread:25180 [wandb_init.py:init():846] sending inform_init request
+2026-08-17 18:06:40,469 INFO    MainThread:25180 [wandb_init.py:init():851] backend started and connected
+2026-08-17 18:06:40,486 INFO    MainThread:25180 [wandb_init.py:init():921] updated telemetry
+2026-08-17 18:06:40,557 INFO    MainThread:25180 [wandb_init.py:init():944] communicating run to backend with 90.0 second timeout
+2026-08-17 18:06:41,195 INFO    MainThread:25180 [wandb_init.py:init():981] starting run threads in backend
+2026-08-17 18:06:41,347 INFO    MainThread:25180 [wandb_run.py:_console_start():2626] atexit reg
+2026-08-17 18:06:41,348 INFO    MainThread:25180 [wandb_run.py:_redirect():2476] redirect: wrap_raw
+2026-08-17 18:06:41,348 INFO    MainThread:25180 [wandb_run.py:_redirect():2545] Wrapping output streams.
+2026-08-17 18:06:41,348 INFO    MainThread:25180 [wandb_run.py:_redirect():2568] Redirects installed.
+2026-08-17 18:06:41,350 INFO    MainThread:25180 [wandb_init.py:init():1019] run started, returning control to user process
+2026-08-17 18:06:57,839 INFO    MainThread:25180 [wandb_run.py:_finish():2397] finishing run gonzalesrios-university-of-denver/nyc-taxi-fare-predictor/fx1dmjpk
+2026-08-17 18:06:57,840 INFO    MainThread:25180 [wandb_run.py:_atexit_cleanup():2593] got exitcode: 0
+2026-08-17 18:06:57,840 INFO    MainThread:25180 [wandb_run.py:_restore():2575] restore
+2026-08-17 18:06:57,840 INFO    MainThread:25180 [wandb_run.py:_restore():2581] restore done
+2026-08-17 18:06:58,457 INFO    MainThread:25180 [wandb_run.py:_footer_sync_info():4025] logging synced files
